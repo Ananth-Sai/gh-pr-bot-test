@@ -1,4 +1,9 @@
-def greet(name):
-    print(f"Hello, {name}!")
+import os
 
-greet("World")
+# Hardcoded secret & missing exception handling
+API_KEY = "sk-proj-12345fakekeyabcdef"
+
+def calculate_ratio(a, b):
+    return a / b  # Potential ZeroDivisionError
+
+print(calculate_ratio(10, 0))

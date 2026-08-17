@@ -9,4 +9,7 @@ def calculate_ratio(a, b):
         raise ValueError("Denominator cannot be zero")
     return a / b
 
-print(calculate_ratio(10, 0))
+try:
+    print(calculate_ratio(10, 0))
+except ValueError as e:
+    print(f"Error: {e}")

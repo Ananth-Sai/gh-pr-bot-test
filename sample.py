@@ -1,12 +1,23 @@
 import os
 
-API_KEY = os.getenv("API_KEY", "default-fallback-key")
+# Retrieve API key from environment variables securely
+API_KEY = os.getenv("API_KEY")
+
+def greet(name="World"):
+    """Prints a greeting message."""
+    print(f"Hello, {name}!")
 
 def calculate_ratio(a, b):
-    if b == 0:
+    """Calculates the ratio of a to b, handling division by zero."""
+    try:
+        return a / b
+    except ZeroDivisionError:
         return None
-    return a / b
 
 if __name__ == "__main__":
-    result = calculate_ratio(10, 0)
-    print(result)
+    greet()
+    ratio = calculate_ratio(10, 0)
+    if ratio is None:
+        print("Calculation failed: Division by zero.")
+    else:
+        print(f"Ratio: {ratio}")

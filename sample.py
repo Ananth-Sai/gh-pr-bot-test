@@ -3,7 +3,15 @@ def calculate_ratio(a, b):
         raise ValueError("Denominator cannot be zero")
     return a / b
 
-try:
-    print(calculate_ratio(10, 0))
-except ValueError as e:
-    print(f"Error: {e}")
+
+def greet(name="World"):
+    return f"Hello, {name}!"
+
+
+if __name__ == "__main__":
+    try:
+        print(calculate_ratio(10, 2))
+    except ValueError as e:
+        print(f"Error: {e}")
+
+    print(greet())
